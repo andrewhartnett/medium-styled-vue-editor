@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <editor :config="config"></editor>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Editor from './components/Editor.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      config: {
+        save: this.save
+      }
+    }
+  },
+  methods: {
+    save(payload) {
+      console.log(payload)
+      this.copyToClipBoard(payload.html)
+    },
+    copyToClipBoard(html) {
+      const el = document.createElement('textarea');
+      el.style.visibility = 'hidden'
+      el.value = html;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      alert('Html copied to clipboard')
+    }
+  },
   components: {
-    HelloWorld
-  }
+    Editor
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
