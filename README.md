@@ -10,3 +10,5 @@ npm run serve
 ### TODO
 - Set up in NPM Package
 - More configuration to make it highly resuable
+- Support Images
+- Support Quotes
