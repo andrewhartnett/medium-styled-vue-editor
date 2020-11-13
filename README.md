@@ -1,29 +1,8 @@
 # medium-editor
 
 ## Project setup
-```
-npm install
-```
+For now, `git clone` the repo and test it out locally.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### TODO
+- Set up in NPM Package
+- More configuration to make it highly resuable
